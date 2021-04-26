@@ -1,0 +1,165 @@
+.zacaz1 *{
+    margin: 0;
+}
+.zacaz1 {
+    max-width: 93.5%;
+    margin: 0 auto;
+    /* margin-top: 40px; */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+.orderName {
+    margin: 0;
+}
+.contentContainer {
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 1fr 2.3fr;
+}
+.contacts {
+    background-color: #F9F9F9;
+    padding: 40px;
+    border-radius: 20px;
+}
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.input {
+    width: 252px;
+    border: 1px solid #EFEFEF;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 11px 16px;
+    margin-bottom: 8px;
+    display: block;
+    outline: none;
+}
+.input:last-of-type {
+    margin-bottom: 32px;
+}
+.selectContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 90px;
+}
+.payWay {
+    margin-bottom: 8px;
+}
+.radiob{
+    margin-right: 18px;
+}
+.totalContainer {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.totalTitle {
+    font-size: 15px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+}
+.totalTitle img {
+    margin-right: 13px;
+}
+.total {
+    font-size: 30px;
+}
+.send {
+    border: none;
+    border-radius: 8px;
+    background-color: #FCEF7D;
+    padding: 16px 0;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+}
+.next {
+    position: fixed;
+    padding: 30px;
+    width: 90%;
+    display: inline-block;
+    margin: 0 auto;
+    bottom: 20px;
+    left: 5%;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+}
+.sum {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+}
+.buysSum {
+    font-size: 15px;
+    color: #C0C0C0;
+}
+.value {
+    font-size: 15px;
+}
+.basket {
+    background-color: #F9F9F9;
+    padding: 40px;
+    border-radius: 20px;
+}
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+}
+.prices {
+    display: flex;
+}
+.prices p:first-of-type {
+    margin-right: 45px;
+}
+
+@media screen and (max-width: 425px){
+    .header {
+        margin-bottom: 16px;
+    }
+    .orderName {
+        margin: 0;
+        font-size: 16px;
+    }
+    .titleContainer {
+        margin-bottom: 16px;
+    }
+    .contentContainer {
+        display: initial;
+        background-color: rebeccapurple;
+    }
+    .contacts {
+        padding: 20px;
+    }
+    .subtitle {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+    .input:last-of-type {
+        margin-bottom: 20px;
+    }
+    .selectContainer {
+        font-size: 13px;
+        margin-bottom: 27px;
+    }
+    .radiob{
+        margin-right: 12px;
+    }
+    .basket {
+        padding: 20px;
+    }
+    .productsContainer {
+        padding-bottom: 140px;
+    }
+    .titleContainer h2{
+        font-size: 18px;
+    }
+    .mobileBlock {
+        display: none;
+    }
+}

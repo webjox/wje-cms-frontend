@@ -1,0 +1,168 @@
+.container {
+    display: grid;
+    grid-template-columns: 360px 1fr 360px;
+}
+.main{
+    margin:auto;
+    margin-top: 20px;
+    display:grid;
+    grid-column: 2/3;
+    grid-template-columns: 760px 360px;
+    grid-column-gap: 40px;
+}
+    .breadcrumbs{
+        grid-column: 1/3;
+        margin-bottom: 46px;
+        cursor: pointer;
+    }
+
+    .contentWrapper{
+        grid-column: 1/2;
+    }
+        .docsWrapper{
+            padding: 40px;
+            background: #F9F9F9;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: repeat(3,150px);
+            grid-column-gap: 100px;
+            grid-row-gap: 20px;
+            margin-top: 40px;
+        }
+        .effects{
+            color: #161616;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 33px;
+            margin-bottom: 24px;
+        }
+        .description{
+            margin-top: 40px;
+        }
+            .description > h1{
+                color: #161616;
+                font-weight: 500;
+                font-size: 28px;
+            }
+            .descriptionContent{
+                cursor: default;
+                transition: .3s;
+                margin:0;
+                margin-top: 12px;
+                color: #161616;
+                font-size: 15px;
+                overflow-y: hidden;
+            }
+                .descriptionBtn{
+                    cursor: pointer;
+                    margin-top: 15px;
+                    color: #3c42d6;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+    .showShopsBtn{
+        max-width: 200px;
+        border: none;
+        margin-top: 20px;
+        border-radius: 8px;
+        padding: 16px;
+        background-color: rgb(252 239 125);
+        height: 46px;
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .productCardWrapper{
+        grid-column: 2/3;
+    }
+        .doc{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #161616;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    .relatedWrapper{
+        grid-column: 1/3;
+        margin-top: 40px;
+    }
+        .relatedWrapper > h1{
+            color: #161616;
+            font-weight: 500;
+            font-size: 28px;
+        }
+    .relatedWrapper > div{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .shopsPopap{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        max-width: 1200px;
+        padding: 40px;
+        background: #FFFFFF;
+        border-radius: 20px;
+        z-index: 99999999;
+        max-height: 900px;
+        transition: .3s;
+        display: grid;
+        grid-template-columns: minmax(300px, 380px) minmax(600px,700px);
+        grid-template-rows: 50px 1fr;
+    }
+
+    .selectShop {
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        transition: 0.3s;
+        padding: 10px;
+        margin-bottom: 22px;
+        margin-right: 5px;
+        border:2px solid transparent;
+      }
+    
+        .popapTitle{
+            display: flex;
+            grid-column: 1/3;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+            .popapTitle > p{
+                color: #161616;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 33px;
+                margin: 0;
+            }
+            .popapTitle > button{
+                padding: 10px;
+                cursor: pointer;
+                background: none;
+                border:none;
+            }
+        .shopWrapper{
+            grid-column: 1/2;
+            grid-row: 2/3;
+            padding: 40px;
+            background: #F9F9F9;
+            border-radius: 20px;
+        }
+
+@media screen and (max-width: 1900px) {
+    .main{
+        grid-template-columns: 438px 248px;
+    }
+    .docsWrapper{
+        grid-template-columns: repeat(2,150px);
+        grid-column-gap: 35px;
+        grid-row-gap: 8px;
+    }
+    .relatedWrapper > div{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

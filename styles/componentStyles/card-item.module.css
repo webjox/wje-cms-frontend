@@ -1,0 +1,65 @@
+.cardItem {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+}
+.img {
+    display: inline-block;
+    margin-right: 32px;
+}
+.desc {
+    display: inline-block;
+    margin-right: 34px;
+}
+.category {
+    font-size: 12px;
+    color: #AEAEAE;
+}
+.add {
+    font-size: 16px;
+    color: #161616;
+    max-width: 128px;
+}
+.count {
+    padding: 4px 37px;
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: #F7F7F7;
+    display: inline-block;
+    margin-right: 36px;
+}
+.amount {
+    color: #161616;
+    font-size: 15px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 425px){
+    .cardItem {
+        max-width: 100%;
+        padding: 16px;
+    }
+    .mobileBlock {
+        display: none;
+    }
+    .img {
+        display: inline-block;
+        margin-right: 12px;
+    }
+    .add {
+        font-size: 16px;
+        color: #161616;
+        max-width: 100px;
+    }
+    .count {
+        padding: 19px 3px;
+        font-size: 12px;
+        border-radius: 8px;
+        background-color: #F7F7F7;
+        display: inline-block;
+        margin-right: 12px;
+    }
+}

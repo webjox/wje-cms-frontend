@@ -1,0 +1,22 @@
+.workTime {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.coordsContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.coords {
+    display: flex;
+    justify-content: space-between;
+}

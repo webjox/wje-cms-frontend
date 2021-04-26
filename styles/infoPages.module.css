@@ -1,0 +1,15 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 380px 1fr 380px;
+  }
+  .contentWrapper{
+    max-width:1000px;
+    margin: auto;
+    align-self: center;
+    background: #F9F9F9;
+    border-radius: 20px;
+    padding: 20px 40px;
+  }
+  .contentWrapper > img{
+    width: 100%;
+  }

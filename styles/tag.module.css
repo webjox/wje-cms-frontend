@@ -1,0 +1,52 @@
+.container {
+    display: grid;
+    grid-template-columns: 380px 1fr 380px;
+  }
+  .main{
+    margin: 20px auto;
+    max-width: 1240px;
+  }
+  .tags{
+    grid-column: 1 / 2;
+    grid-row:1/ 2 ;
+  }
+  .tagsWrapper{
+    display: flex;
+  }
+  .title{
+    color:#161616;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    cursor: pointer;
+  }
+  .breadcrumbs{
+    margin-top: 40px;
+    color: #161616;
+    font-size: 15px;
+    display: flex;
+  }
+  .category{
+    margin-top:28px;
+
+  }
+  .piroshow{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+  .filterWrapper{
+    margin-top: 28px;
+  }
+  .categoryWrapper{
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+  }
+  @media screen and (max-width: 1900px) {
+    .main{
+      max-width: 746px;
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    
+  }

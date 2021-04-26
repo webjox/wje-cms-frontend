@@ -1,0 +1,23 @@
+.wrapper{
+    margin-bottom: 12px;
+    display: block;
+}
+.container{
+    display:flex;
+    height: 100px;
+    justify-content: space-between;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    padding: 24px;
+    background: #F9F9F9;
+    max-width: 560px;
+    height: 200px;
+}
+    .title{
+        font-size: 20px;
+        color:#fff;
+        font-weight: 500;
+        margin: 0;
+    }

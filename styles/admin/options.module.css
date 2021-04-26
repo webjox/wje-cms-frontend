@@ -1,0 +1,19 @@
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.optionCard {
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    border-radius: 5px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    min-width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.optionCard input {
+    min-width: 250px!important;
+}

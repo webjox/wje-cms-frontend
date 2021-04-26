@@ -1,0 +1,9 @@
+.menuButton {
+    padding: 10px 8px;
+}
+
+.menuButton svg {
+    width: 1.5em;
+    height: 1.5em;
+    color: white;
+}

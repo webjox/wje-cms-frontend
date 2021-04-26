@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: 380px 1fr 380px;
+}
+.favoriteList{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 40px;
+}
+    .header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+    }
+    .pageTitle{
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+        color: #161616;
+    }
+    .sort{
+        display: flex;
+        align-items: center;
+        color: #161616;
+        font-size: 15px;
+        cursor: pointer;
+    }

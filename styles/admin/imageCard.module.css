@@ -1,0 +1,13 @@
+.imageCard {
+    width: 285px;
+    height: 460px;
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px
+}
+.imageCard img {
+    width: 283px;
+    height: 300px;
+}

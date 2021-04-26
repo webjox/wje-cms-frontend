@@ -1,0 +1,195 @@
+.register {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form {
+    background-color: #F9F9F9;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: initial;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+.title {
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 32px;
+}
+.stage {
+    font-size: 28px;
+    color: #AEAEAE;
+    margin: 0;
+}
+.input {
+    width: 252px;
+    border: 1px solid #EFEFEF;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 11px 16px;
+    margin-bottom: 8px;
+    display: block;
+    outline: none;
+}
+.input:last-of-type {
+    margin-bottom: 12px;
+}
+.input::placeholder {
+    font-family: Arial;
+    color: #AEAEAE;
+    font-size: 14px;
+}
+.text {
+    margin-bottom: 32px;
+    font-size: 15px;
+    color: #1E25E8;
+    cursor: pointer;
+}
+.send {
+    border: none;
+    border-radius: 8px;
+    background-color: #FCEF7D;
+    padding: 16px 0;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.edit .text:first-child {
+    margin-bottom: 5px;
+    color: #AEAEAE;
+}
+
+
+.chekContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.paramsCheck {
+    display: none;
+}
+.switch {
+    width: 58px;
+    height: 30px;
+    padding: 3px;
+    background-color: #CACFD5;
+    border-radius: 23px;
+    transition: .4s;
+}
+.switchSlider {
+    width: 26px;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+.switchActive {
+    transition: .4s;
+    background-color: #FCEF7D;
+}
+.switchSliderActive {
+    transition: .4s;
+    margin-left: 50%;
+}
+
+.persData {
+    display: flex;
+    align-items: baseline;
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+.check {
+    margin-right: 18px;
+}
+
+.registerSuccesWrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+.registerSuccesMessage{
+    max-width: 550px;
+    font-size: 22px;
+    margin: 20px;
+}
+.registerSuccesBtn{
+    cursor: pointer;
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: center;
+    background: #FCEF7D;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #161616;
+}
+
+.requestMessage {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    max-width: 590px;
+    width: 100%;
+    font-size: 30px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    z-index: 99999999;
+    max-height: 900px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 8px 0px rgb(34 60 80 / 20%);
+    text-align: center;
+}
+    
+
+@media screen and (max-width: 425px){
+    .register {
+        max-width: 80%;
+    }
+    .form {
+        max-width: 100%;
+        padding: 20px;
+    }
+    .title {
+        margin-bottom: 20px;
+    }
+    .input {
+        width: 100%;
+    }
+    .chekContainer {
+        margin-bottom: 22px;
+    }
+    .chekContainer p {
+        font-size: 14px;
+    }
+    .switch {
+        width: 36px;
+        height: 24px;
+        padding: 2px;
+    }
+    .switchSlider {
+        width: 20px;
+        height: 100%;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+    .persData {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+}

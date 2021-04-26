@@ -1,0 +1,6 @@
+.wrapper{
+    min-width: 100%;
+    margin-top:20px;
+    justify-self: center;
+    grid-column: 2 / 3;
+}

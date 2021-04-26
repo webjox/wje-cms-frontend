@@ -1,0 +1,8 @@
+.headerlist {
+    display: flex
+}
+
+
+.headerlist li {
+    place-content: center;
+}

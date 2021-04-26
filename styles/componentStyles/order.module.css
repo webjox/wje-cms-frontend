@@ -1,0 +1,41 @@
+.card {
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 6px;
+    background-color: #F7F7F7;
+}
+.cardActive {
+    background-color: #FFFFFF;
+}
+.cardTitle {
+    padding: 20px 22.5px;
+    display: flex;
+    justify-content: space-between;
+}
+.cardTitleActive {
+    color: #1FC72F;
+}
+.price {
+    display: flex;
+}
+.price p:first-child {
+    margin-right: 39px;
+}
+.cardItemNone {
+    display: none;
+}
+
+@media screen and (max-width: 425px){
+    .cardTitle {
+        padding: 18px 16px;
+        display: grid;
+        justify-content: space-between;
+    }
+    .orderNumber {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .price {
+        justify-content: space-between;
+    }
+}

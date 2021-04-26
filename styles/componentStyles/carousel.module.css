@@ -1,0 +1,11 @@
+.carouselWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    overflow:visible;
+}

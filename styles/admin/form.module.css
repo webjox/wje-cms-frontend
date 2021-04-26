@@ -1,0 +1,27 @@
+.formContainer {
+    margin: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.formInput {
+    margin-top: 30px!important;
+}
+
+.formButtonContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.DeleteButton {
+    width: 70%;
+    align-self: center;
+    margin-bottom: 50px!important
+}
+
+.formTitle {
+    font-size: 28px;
+    color: rgba(0, 0, 0, 0.87);
+}

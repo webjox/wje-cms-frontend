@@ -1,0 +1,21 @@
+.wrapper{
+    margin-bottom: 12px;
+}
+.wrapper:last-child{
+    margin: 0px;
+}
+.container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    padding: 0px 24px;
+    background: #F9F9F9;
+    max-width: 560px;
+    height: 66px;
+}
+    .title{
+        margin:0;
+        font-size: 20px;
+        color:#161616;
+    }

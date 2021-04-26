@@ -1,0 +1,33 @@
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}
+
+.infoContainer button {
+    margin-top: 10px;
+}
+
+.field {
+    margin-top: 10px;
+}
+
+.orderInfo {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.customerInfo {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}

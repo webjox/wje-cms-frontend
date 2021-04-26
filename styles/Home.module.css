@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: 380px 1fr 380px;
+}
+.main{
+  display: grid;
+  margin-top: 20px;
+  grid-column: 2/3;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+}
+.tags{
+  grid-column: 1 / 3;
+  grid-row:1/ 2 ;
+}
+.tagsWrapper{
+  display: flex;
+}
+.title{
+  color:#161616;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.serviceCardTitle{
+  color:#161616;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  grid-column: 1 / 3;
+}
+.category{
+  margin-top: 40px;
+}
+.serviceCardWrapper{
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+}

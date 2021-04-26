@@ -1,0 +1,25 @@
+.main{
+    max-width: 1240px;
+    padding: 0px 40px;
+    display: grid;
+    margin: auto;
+    margin-top: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+    .title{
+        grid-column: 1 / 5;
+        color: rgb(22 22 22);
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 24px;
+    }
+
+@media screen and (max-width: 1900px) {
+    .main{
+        max-width: 746px;
+        grid-template-columns: repeat(3, 300px);
+    }
+    .title{
+        grid-column: 1 / 4;
+    }
+}

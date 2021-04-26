@@ -1,0 +1,36 @@
+.title {
+    align-self: center;
+    font-size: 32px;
+    color: #1d1d1d
+}
+
+.personalData {
+    display: flex;
+    flex-direction: column;
+}
+
+.billingData {
+    display: flex;
+    flex-direction: column;
+}
+
+.shippingData {
+    display: flex;
+    flex-direction: column;
+}
+
+.dataContainer {
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-between;
+}
+
+.infoTitle {
+    font-size: 24px;
+    color: #3d3d3d
+}
+
+.infoRow {
+    font-size: 18px;
+    color: #3d3d3d
+}

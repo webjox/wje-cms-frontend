@@ -1,0 +1,14 @@
+.wrapper{
+    cursor: pointer;
+    margin-right: 20px;
+}
+.container{
+    background:#F7F7F7;
+    border-radius: 8px;
+    display: flex;
+    padding: 14px 20px;
+    flex: 1 0 100px;
+    justify-content: center;
+    align-items: center;
+    height: 47px;
+}
