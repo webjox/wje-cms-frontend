@@ -1,7 +1,3 @@
-
 export default function () {
-
-    return (
-        <div>Группы пользователей</div>
-    )
+  return <div>Группы пользователей</div>;
 }

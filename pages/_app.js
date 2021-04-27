@@ -1,284 +1,291 @@
-import '../styles/globals.css'
-import globalState from '../src/state/globalStateContext/context';
 import { useEffect, useState } from 'react';
-import api from '../server/api';
 import store from 'store';
+import globalState from '../src/state/globalStateContext/context';
+import '../styles/globals.css';
 import { useHttp } from '../src/hooks/useHttp';
 import config from '../config';
 
-
 function MyApp({ Component, pageProps }) {
-  const {request} = useHttp();
+  const { request } = useHttp();
 
   const [state, setState] = useState({
-    checkout:   {},
-    search:     '',
-    userData:   {},
-    cart:       {},
-    filter:     [],
-    tags:       [],
+    checkout: {},
+    search: '',
+    userData: {},
+    cart: {},
+    filter: [],
+    tags: [],
     categories: [],
-    setCartItemsData: (data) => {
+    setCartItemsData: data => {
       setState(prevstate => {
         prevstate.cart = data;
-        return {...prevstate};
-      })
+        return { ...prevstate };
+      });
     },
-    setUserData: (data) => {
+    setUserData: data => {
       setState(prevstate => {
         prevstate.userData = data;
-        return {...prevstate};
-      })
+        return { ...prevstate };
+      });
     },
-    setCheckout: (data) => {
+    setCheckout: data => {
       setState(prevstate => {
         prevstate.checkout = data;
-        return {...prevstate};
-      })
+        return { ...prevstate };
+      });
     },
-    setCartData: (data) => {
+    setCartData: data => {
       setState(prevstate => {
         prevstate.cart = data;
-        return {...prevstate};
-      })
+        return { ...prevstate };
+      });
     },
-    setFilterData: (data) => {
+    setFilterData: data => {
       setState(prevstate => {
         prevstate.filter = data;
-        return {...prevstate};
-      })
+        return { ...prevstate };
+      });
     },
-    setCategoriesData: (data) => {
+    setCategoriesData: data => {
       setState(prevstate => {
         prevstate.categories = data;
-        return {...prevstate};
-      }) 
+        return { ...prevstate };
+      });
     },
-    setTagsData: (data) => {
+    setTagsData: data => {
       setState(prevstate => {
         prevstate.tags = data;
-        return {...prevstate};
-      }) 
+        return { ...prevstate };
+      });
     },
-    setSearchData: (string) => {
+    setSearchData: string => {
       setState(prevstate => {
         prevstate.search = string;
-        return {...prevstate};
-      }) 
+        return { ...prevstate };
+      });
     },
-    getUserData: async (token) => {
+    getUserData: async token => {
       const result = await request(`${config.serverAJAXurl}/customer-account`, 'POST', {
         token,
-      })
-      if(result.status === 200) return result.data;
-      else return {};
+      });
+      if (result.status === 200) return result.data;
+      return {};
     },
-    putUserData: async (body) => {
-      const result = await request(`${config.serverAJAXurl}/customer-account`, 'PUT', body)
-      if(result.status === 200) return result.data;
-      else return {};
+    putUserData: async body => {
+      const result = await request(`${config.serverAJAXurl}/customer-account`, 'PUT', body);
+      if (result.status === 200) return result.data;
+      return {};
     },
-    getProductBySearch: async (string) => {
+    getProductBySearch: async string => {
       const result = await request(`${config.serverAJAXurl}/products?search=${string}`);
-      if(result.status === 200) return result.data;
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getProductBySlug: async (id) => {
+    getProductBySlug: async id => {
       const result = await request(`${config.serverAJAXurl}/products?slug=${id}`);
-      if(result.status === 200) return result.data[0];
-      else return [];
+      if (result.status === 200) return result.data[0];
+      return [];
     },
-    getProductById: async (id) => {
+    getProductById: async id => {
       const result = await request(`${config.serverAJAXurl}/products/${id}`);
-      if(result.status === 200) return result.data;
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getProductByCategory: async (id) => {
+    getProductByCategory: async id => {
       const result = await request(`${config.serverAJAXurl}/products?categoryId=${id}`);
-      if(result.status === 200) return result.data;
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getProductsByFilter: async (array) => {
+    getProductsByFilter: async array => {
       let string = '';
-      if(array.length !== 0){
+      if (array.length !== 0) {
         array.forEach(item => {
-          let replacedItem = item[1].replace(/ /g, '%20');
-          string += `${item[0]}=${replacedItem}&`
-        })
+          const replacedItem = item[1].replace(/ /g, '%20');
+          string += `${item[0]}=${replacedItem}&`;
+        });
       }
       const result = await request(`${config.serverAJAXurl}/products?${string}`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getImagesProductById: async (id) => {
+    getImagesProductById: async id => {
       const result = await request(`${config.serverAJAXurl}/products/${id}/images`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getProductFilesById: async (id) => {
+    getProductFilesById: async id => {
       const result = await request(`${config.serverAJAXurl}/products/${id}/files`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getCartData: async () => {
       const result = await request(`${config.serverAJAXurl}/cart`);
-      if(result.status === 200) return result.data
-      else return {};
+      if (result.status === 200) return result.data;
+      return {};
     },
-    putCart: async (body) => {
+    putCart: async body => {
       const result = await request(`${config.serverAJAXurl}/cart`, 'PUT', body);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    addToCart: async (item) => {
+    addToCart: async item => {
       const result = await request(`${config.serverAJAXurl}/cart/items`, `POST`, item);
-      if(result.status === 200) setState(prevstate => {
-        prevstate.cart = result.data;
-        return {...prevstate}
-      })
+      if (result.status === 200)
+        setState(prevstate => {
+          prevstate.cart = result.data;
+          return { ...prevstate };
+        });
     },
-    changeCart: async (item) => {
+    changeCart: async item => {
       const result = await request(`${config.serverAJAXurl}/cart/items`, `POST`, item);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    deleteItemFromCart: async (id) => {
+    deleteItemFromCart: async id => {
       const result = await request(`${config.serverAJAXurl}/cart/items/${id}`, `DELETE`);
-      if(result.status === 200) state.setCartData(await state.getCartData())
+      if (result.status === 200) state.setCartData(await state.getCartData());
     },
-    putCheckout: async (body) => {
+    putCheckout: async body => {
       const result = await request(`${config.serverAJAXurl}/cart/checkout`, `PUT`, body);
       return result;
     },
     getTags: async () => {
       const result = await request(`${config.serverAJAXurl}/products/tags`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getTagId: async (id) => {
+    getTagId: async id => {
       const result = await request(`${config.serverAJAXurl}/products/tags/${String(id)}`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getCategories: async () => {
       const result = await request(`${config.serverAJAXurl}/categories`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getCategoryId: async (id) => {
+    getCategoryId: async id => {
       const result = await request(`${config.serverAJAXurl}/categories/${String(id)}`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getImagesCategoryById: async (id) => {
+    getImagesCategoryById: async id => {
       const result = await request(`${config.serverAJAXurl}/categories/${id}/image`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getPages: async () => {
       const result = await request(`${config.serverAJAXurl}/pages`, 'POST', {});
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
-    getPageById: async (id) => {
-      const result =  await request(`${config.serverAJAXurl}/pages/${String(id)}`, 'POST', {});
-      if(result.status === 200) return result.data
-      else return [];
+    getPageById: async id => {
+      const result = await request(`${config.serverAJAXurl}/pages/${String(id)}`, 'POST', {});
+      if (result.status === 200) return result.data;
+      return [];
     },
-    registerUser: async (item) => {
+    registerUser: async item => {
       const result = await request(`${config.serverAJAXurl}/register`, `POST`, item);
       return result;
     },
-    loginUser: async (item) => {
+    loginUser: async item => {
       const result = await request(`${config.serverAJAXurl}/login`, `POST`, item);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getEffects: async () => {
       const result = await request(`${config.serverAJAXurl}/products/effects`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getShops: async () => {
       const result = await request(`${config.serverAJAXurl}/shops`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getManufacturers: async () => {
       const result = await request(`${config.serverAJAXurl}/products/manufacturers`);
-      if(result.status === 200) return result.data
-      else return [];
+      if (result.status === 200) return result.data;
+      return [];
     },
     getShippingMethods: async () => {
-      const result = await request(`${config.serverAJAXurl}/shipping_methods`)
-      if(result.status === 200) return result.data;
-      else return [];
+      const result = await request(`${config.serverAJAXurl}/shipping_methods`);
+      if (result.status === 200) return result.data;
+      return [];
     },
     getPaymentMethods: async () => {
-      const result = await request(`${config.serverAJAXurl}/payment_methods`)
-      if(result.status === 200) return result.data;
-      else return [];
+      const result = await request(`${config.serverAJAXurl}/payment_methods`);
+      if (result.status === 200) return result.data;
+      return [];
     },
   });
 
   // get user data
   useEffect(async () => {
-    if(Object.keys(state.userData).length == 0) {
+    if (Object.keys(state.userData).length === 0) {
       const authData = store.get('auth_data') || null;
-      if(authData) {
-      const userData = await request(`${config.serverAJAXurl}/customer-account`, 'POST', {
-        token: authData.token
-      })
-      if(userData){
-        const featuredProducts = localStorage.getItem('featuredProducts');
-        if(!featuredProducts){
-          localStorage.setItem('featuredProducts', JSON.stringify(userData.customer_settings.featured_products));
+      if (authData) {
+        const userData = await request(`${config.serverAJAXurl}/customer-account`, 'POST', {
+          token: authData.token,
+        });
+        if (userData) {
+          const featuredProducts = localStorage.getItem('featuredProducts');
+          if (!featuredProducts) {
+            localStorage.setItem(
+              'featuredProducts',
+              JSON.stringify(userData.customer_settings.featured_products),
+            );
+          } else {
+            const concated = Array.from(
+              new Set(
+                userData.customer_settings.featured_products.concat(JSON.parse(featuredProducts)),
+              ),
+            );
+            userData.customer_settings.featured_products = concated;
+          }
+          state.setUserData(userData);
         }
-        else{
-          const concated = Array.from(new Set (userData.customer_settings.featured_products.concat(JSON.parse(featuredProducts))));
-          userData.customer_settings.featured_products = concated;
-        }
-        state.setUserData(userData);
       }
-    }}
-  }, [])
+    }
+  }, []);
 
   // get featured
-  useEffect(async() => {
-      if(state.userData.customer_settings){
-        const featuredProducts = localStorage.getItem('featuredProducts');
-        if(!featuredProducts){
-          localStorage.setItem('featuredProducts', JSON.stringify(state.userData.customer_settings.featured_products));
-        }
-        else{
-          const concated = Array.from(new Set (state.userData.customer_settings.featured_products.concat(JSON.parse(featuredProducts))));
-          localStorage.setItem('featuredProducts', JSON.stringify(concated));
-        }  
+  useEffect(async () => {
+    if (state.userData.customer_settings) {
+      const featuredProducts = localStorage.getItem('featuredProducts');
+      if (!featuredProducts) {
+        localStorage.setItem(
+          'featuredProducts',
+          JSON.stringify(state.userData.customer_settings.featured_products),
+        );
+      } else {
+        const concated = Array.from(
+          new Set(
+            state.userData.customer_settings.featured_products.concat(JSON.parse(featuredProducts)),
+          ),
+        );
+        localStorage.setItem('featuredProducts', JSON.stringify(concated));
       }
-  }, [state.userData])
-  
-  // get categories
-  useEffect(async() => {
-    state.setCategoriesData(await state.getCategories())
-  }, [])
-  // get tags
-  useEffect(async() => {
-    state.setTagsData(await state.getTags())
-  }, [])
+    }
+  }, [state.userData]);
 
-  // get cart
-  useEffect(async() => {
-    state.setCartData(await state.getCartData())
-  }, [])
+  useEffect(async () => {
+    state.setCategoriesData(await state.getCategories());
+    state.setTagsData(await state.getTags());
+    state.setCartData(await state.getCartData());
+  }, []);
 
-  const stateObject = {state, setState}
+  const stateObject = { state, setState };
 
   return (
-      <globalState.Provider value={stateObject}>
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=9715d01b-4d9a-4324-b7de-12087ac8b9b4&lang=ru_RU" type="text/javascript"/>
-        <Component {...pageProps} />  
-      </globalState.Provider>
-  )
+    <globalState.Provider value={stateObject}>
+      <script
+        src="https://api-maps.yandex.ru/2.1/?apikey=9715d01b-4d9a-4324-b7de-12087ac8b9b4&lang=ru_RU"
+        type="text/javascript"
+      />
+      <Component {...pageProps} />
+    </globalState.Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;

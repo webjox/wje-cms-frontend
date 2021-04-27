@@ -18,23 +18,26 @@ export default function FormDialog(props) {
   };
 
   return (
-    <div style={{float: "right"}}>
-      <Button color='inherit' variant="outlined" color="primary" onClick={handleClickOpen}>
+    <div style={{ float: 'right' }}>
+      <Button color="inherit" variant="outlined" color="primary" onClick={handleClickOpen}>
         {props.title}
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">{props.title}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-              {props.description}
-          </DialogContentText>
-            {props.fields}
+          <DialogContentText>{props.description}</DialogContentText>
+          {props.fields}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Отменить
           </Button>
-          <Button onClick={e => {handleClose(); props.action(e)}} color="primary">
+          <Button
+            onClick={e => {
+              handleClose();
+              props.action(e);
+            }}
+            color="primary">
             Подтвердить
           </Button>
         </DialogActions>

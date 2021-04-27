@@ -1,8 +1,8 @@
-import {createContext} from 'react';
+import { createContext } from 'react';
 
 const globalState = createContext({
-    userData: {},
-    setUserData: () => {}
+  userData: {},
+  setUserData: () => {},
 });
 
 export default globalState;

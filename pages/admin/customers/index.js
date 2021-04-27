@@ -6,28 +6,26 @@ import Header from '../../../components/admin/header';
 import api from '../../../server/api';
 
 export default function Customers() {
-    const [customers, setCustomers] = useState([]);
-    
-    const getCustomerData = async () => {
-        const response = await api.customers.getCustomers();
-        if(response.status === 200) setCustomers(response.data.data);
-    }
+  const [customers, setCustomers] = useState([]);
 
-    useEffect(() => {
-        getCustomerData()
-    }, [])
+  const getCustomerData = async () => {
+    const response = await api.customers.getCustomers();
+    if (response.status === 200) setCustomers(response.data.data);
+  };
 
-    return (
+  useEffect(() => {
+    getCustomerData();
+  }, []);
+
+  return (
     <div>
-        <Header 
-        pageName={"Клиенты"}
+      <Header pageName={'Клиенты'} />
+      <div>
+        <ContentContainer
+          left={<ControllerMenu />}
+          right={<CustomersList userData={customers} />}
         />
-        <div>
-            <ContentContainer 
-            left={<ControllerMenu />}
-            right={<CustomersList userData={customers} />}
-            
-            />
-        </div>
-    </div>)
+      </div>
+    </div>
+  );
 }
